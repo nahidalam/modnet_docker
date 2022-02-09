@@ -13,5 +13,5 @@ Make sure you have docker desktop installed. Then
 - Build the docker image `docker build -t <image-name> .`
 - Run the docker image
 ```
-docker run --rm <image-name> --input-path demo/image_matting/input --output-path demo/image_matting/output --ckpt-path ./pretrained/modnet_photographic_portrait_matting.ckpt
+docker run --rm <image-name> --input_path demo/image_matting/input --output_path demo/image_matting/output --ckpt_path ./pretrained/modnet_photographic_portrait_matting.ckpt
 ```
