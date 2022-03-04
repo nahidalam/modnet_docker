@@ -9,9 +9,11 @@ This repo dockerizes the MODNet model above
 Make sure you have docker desktop installed. Then
 
 - Pull this repo
-- Put your input images inside `demo\image_matting\input` directory
-- Build the docker image `docker build -t <image-name> .`
-- Run the docker image
+- Put your input images inside `demo/image_matting/input` directory
+- Build the docker container `make dev-start`
+- Run the docker container `make bash`
+- Now you will find yourself inside the container with the mount point `/mnt#`
+- Run the python inference script inside the container
 ```
-docker run --rm <image-name> --input_path demo/image_matting/input --output_path demo/image_matting/output --ckpt_path ./pretrained/modnet_photographic_portrait_matting.ckpt
+/mnt# python inference.py --input_path demo/image_matting/input --output_path demo/image_matting/output --ckpt_path ./pretrained/modnet_photographic_portrait_matting.ckpt
 ```
