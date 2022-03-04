@@ -1,0 +1,13 @@
+version: "3"
+services:
+  develop:
+    build:
+      context: .
+    ports:
+      - "127.0.0.1::8888"
+    volumes:
+      - ../:/mnt
+    entrypoint: bash -c "cd /mnt && jupyter lab --NotebookApp.token='' --ip=0.0.0.0 --allow-root && /bin/bash"
+    stdin_open: true
+    container_name: "modnet_develop_${USER}"
+    tty: true

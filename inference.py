@@ -111,8 +111,6 @@ if __name__ == '__main__':
 
         # inference
         _, _, matte = modnet(im.cuda() if torch.cuda.is_available() else im, True)
-        #print("Inference done, got matte")
-        #print(matte)
 
         # resize and save matte
         matte = F.interpolate(matte, size=(im_h, im_w), mode='area')
@@ -120,7 +118,7 @@ if __name__ == '__main__':
         matte_name = im_name.split('.')[0] + '.png'
         foreground_name = im_name.split('.')[0] + '.foreground.png'
         Image.fromarray(((matte * 255).astype('uint8')), mode='L').save(os.path.join(args.output_path, matte_name))
-        #print("saved matte")
+        print("saved matte")
 
         foreground = remove_background(Image.open(os.path.join(args.input_path, im_name)), Image.open(os.path.join(args.output_path, matte_name)))
         foreground.save(os.path.join(args.output_path, foreground_name))
