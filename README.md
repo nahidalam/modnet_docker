@@ -1,3 +1,6 @@
+
+[![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/default-black.png)](https://www.buymeacoffee.com/nahidalam)
+
 # MODNet-Docker
 MODNet (https://github.com/ZHKKKe/MODNet) is a real-time portrait matting solution
 
@@ -18,4 +21,3 @@ Make sure you have docker desktop installed. Then
 /mnt# python inference.py --input_path demo/image_matting/input --output_path demo/image_matting/output --ckpt_path ./pretrained/modnet_photographic_portrait_matting.ckpt
 ```
 
-[![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/default-black.png)](https://www.buymeacoffee.com/nahidalam)
